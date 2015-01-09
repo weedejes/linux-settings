@@ -23,6 +23,13 @@ if [ $? -eq 0 ]; then
     fbautostart
 fi
 
+# Add 1920x1080 screen resolution and set it
+
+xrandr --newmode "1920x1080" 152.77 1920 1970 2020 2070 1080 1130 1180 1230 -hsync +vsync
+xrandr --addmode Virtual1 "1920x1080"
+xrandr -s 1920x1080
+
+
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
 

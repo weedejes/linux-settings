@@ -11,11 +11,11 @@ OnDesktop Mouse5 :NextWorkspace
 OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
 OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
 
-# alt + left/right click to move/resize a window
-OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+# windows + left/right click to move/resize a window
+OnWindow Mod4 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
 OnWindowBorder Move1 :StartMoving
 
-OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnWindow Mod4 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 OnLeftGrip Move1 :StartResizing bottomleft
 OnRightGrip Move1 :StartResizing bottomright
 
@@ -49,8 +49,15 @@ Mod4 Shift Tab :PrevTab
 # open a terminal
 Mod4 t :Exec uxterm
 
+# open a terminal running vim
+Mod4 v :Exec uxterm -e vim
+
+# open firefox
+Mod4 f :Exec firefox
+
 # open a dialog to run programs
 Mod1 F2 :Exec fbrun
+
 
 # current window commands
 Mod1 F4 :Close
@@ -89,8 +96,16 @@ None F12 t :ExecCommand uxterm -e ssh dsi_transactie_2
 None F11 p :ExecCommand uxterm -e ssh dsi_publicatie_1
 None F12 p :ExecCommand uxterm -e ssh dsi_publicatie_2
 
-# 
+# Arranging windows
 
-Mod4 KP_9 :ToggleCmd {MacroCmd  {ResizeTo 640 319} {MoveTo 0 0 UpperRight}} {Maximize}
-Mod4 KP_6 :ToggleCmd {MacroCmd  {ResizeTo 640 983} {MoveTo 0 * Right}} {Maximize}
+Mod4 KP_1 :MacroCmd  {ResizeTo 958 527} {MoveTo 0 0 LowerLeft}
+Mod4 KP_2 :MacroCmd  {ResizeTo 1920 527} {MoveTo 0 0 LowerLeft}
+Mod4 KP_3 :MacroCmd  {ResizeTo 958 527} {MoveTo 0 0 LowerRight}
 
+Mod4 KP_4 :MacroCmd  {ResizeTo 958 1060} {MoveTo 0 0 UpperLeft}
+Mod4 KP_5 :Maximize
+Mod4 KP_6 :MacroCmd  {ResizeTo 958 1060} {MoveTo 0 0 UpperRight}
+
+Mod4 KP_7 :MacroCmd  {ResizeTo 958 527} {MoveTo 0 0 UpperLeft}
+Mod4 KP_8 :MacroCmd  {ResizeTo 1920 527} {MoveTo 0 0 UpperLeft}
+Mod4 KP_9 :MacroCmd  {ResizeTo 958 527} {MoveTo 0 0 UpperRight}
