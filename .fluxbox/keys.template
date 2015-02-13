@@ -109,14 +109,14 @@ None F12 k :ExecCommand uxterm -e ssh dsi_karaf_2
 
 # Arranging windows
 
-Mod4 KP_1 :MacroCmd  {ResizeTo 954 467} {MoveTo 0 0 LowerLeft}
-Mod4 KP_2 :MacroCmd  {ResizeTo 1912 467} {MoveTo 0 0 LowerLeft}
-Mod4 KP_3 :MacroCmd  {ResizeTo 954 467} {MoveTo 0 0 LowerRight}
+Mod4 KP_1 :MacroCmd  {ResizeTo %half_width% %half_height%} {MoveTo 0 0 LowerLeft}
+Mod4 KP_2 :MacroCmd  {ResizeTo %width% %half_height%} {MoveTo 0 0 LowerLeft}
+Mod4 KP_3 :MacroCmd  {ResizeTo %half_width% %half_height%} {MoveTo 0 0 LowerRight}
 
-Mod4 KP_4 :MacroCmd  {ResizeTo 954 958} {MoveTo 0 0 UpperLeft}
+Mod4 KP_4 :MacroCmd  {ResizeTo %half_width% %height%} {MoveTo 0 0 UpperLeft}
 Mod4 KP_5 :Maximize
-Mod4 KP_6 :MacroCmd  {ResizeTo 954 958} {MoveTo 0 0 UpperRight}
+Mod4 KP_6 :MacroCmd  {ResizeTo %half_width% %height%} {MoveTo 0 0 UpperRight}
 
-Mod4 KP_7 :MacroCmd  {ResizeTo 954 467} {MoveTo 0 0 UpperLeft}
-Mod4 KP_8 :MacroCmd  {ResizeTo 1912 467} {MoveTo 0 0 UpperLeft}
-Mod4 KP_9 :MacroCmd  {ResizeTo 954 467} {MoveTo 0 0 UpperRight}
+Mod4 KP_7 :MacroCmd  {ResizeTo %half_width% %half_height%} {MoveTo 0 0 UpperLeft}
+Mod4 KP_8 :MacroCmd  {ResizeTo %width% %half_height%} {MoveTo 0 0 UpperLeft}
+Mod4 KP_9 :MacroCmd  {ResizeTo %half_width% %half_height%} {MoveTo 0 0 UpperRight}

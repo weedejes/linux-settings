@@ -27,7 +27,30 @@ fi
 
 xrandr --newmode "1920x1080" 152.77 1920 1970 2020 2070 1080 1130 1180 1230 -hsync +vsync
 xrandr --addmode Virtual1 "1920x1080"
-xrandr -s 1920x1080
+
+xrandr --newmode "1912x960"  151.95  1912 2024 2232 2552  960 961 964 994  -HSync +Vsync
+xrandr --addmode Virtual1 "1912x960"
+
+
+#xrandr -s 1920x1080
+width=1912
+height=960
+screen_height=958
+
+half_height=$(($height-26))
+half_height=$(($half_height/2))
+half_width=$(($width-4))
+half_width=$(($half_width/2))
+
+
+xrandr -s ${width}x${height}
+
+sed -e "s@%half_width%@${half_width}@g" \
+	-e "s@%half_height%@${half_height}@g" \
+	-e "s@%width%@${width}@g" \
+	-e "s@%height%@${screen_height}@g" \
+	/home/wimds/.fluxbox/keys.template > /home/wimds/.fluxbox/keys
+	
 
 
 # And last but not least we start fluxbox.
